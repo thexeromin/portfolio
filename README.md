@@ -1,3 +1,3 @@
-# Portfolio V2
+# Portfolio
 
 Live at: https://portfolio-v2-cyan-nu.vercel.app/
