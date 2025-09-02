@@ -1,9 +1,9 @@
 # Ignore artifacts:
+
 build
+dist
 coverage
-.next
-next-env.d.ts
 node_modules
-yarn.lock
-package-lock.json
-public
+server
+.next
+.husky
