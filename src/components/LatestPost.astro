@@ -1,0 +1,61 @@
+---
+// TODO: delete dummy posts
+const posts = [
+  {
+    number: "01.",
+    title: "Building Scalable Systems with Rust",
+    date: "September 2024",
+    link: "#"
+  },
+  {
+    number: "02.",
+    title: "Understanding Tailwind CSS 4.0 Architecture",
+    date: "August 2024",
+    link: "#"
+  },
+  {
+    number: "03.",
+    title: "Why I switched from React to Astro",
+    date: "July 2024",
+    link: "#"
+  }
+];
+---
+
+<section class="font-ibm-plex py-16">
+  <h2 class="text-ice mb-8 inline-block pb-4 text-3xl font-bold md:text-4xl">
+    Latest posts
+  </h2>
+
+  <div class="flex flex-col gap-8">
+    {
+      posts.map((post) => (
+        <a href={post.link} class="group block">
+          <div class="flex items-start gap-5">
+            <span class="shrink-0 pt-1 text-sm text-white opacity-70 transition-opacity group-hover:opacity-100 md:text-base">
+              {post.number}
+            </span>
+
+            <div class="flex flex-col">
+              <h3 class="text-neon decoration-neon mb-1 text-lg leading-tight font-bold transition-all group-hover:underline group-hover:underline-offset-4 md:text-xl">
+                {post.title}
+              </h3>
+
+              <span class="text-sm text-gray-400">{post.date}</span>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="mt-12 text-sm text-gray-400 md:text-base">
+    1 more post can be found in
+    <a
+      href="/archive"
+      class="text-neon decoration-neon transition-all hover:underline hover:underline-offset-4"
+    >
+      the archive
+    </a>.
+  </div>
+</section>
