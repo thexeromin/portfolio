@@ -7,11 +7,26 @@
 
   /* Colors */
   --color-dark-base: #1d232a;
+  --color-neon: #605dff;
 }
 
 @layer base {
   body {
     @apply bg-dark-base text-white;
     min-height: 100vh;
+  }
+
+  /* Desktop Links */
+  .nav-link {
+    @apply font-major-display text-sm tracking-widest text-white transition-all duration-300;
+    /* Hover Styles */
+    @apply hover:underline hover:decoration-white hover:decoration-1 hover:underline-offset-4;
+  }
+
+  /* Mobile Links */
+  .mobile-link {
+    @apply font-major-display text-2xl tracking-widest text-white transition-all duration-300;
+    /* Hover Styles */
+    @apply hover:underline hover:decoration-white hover:decoration-1 hover:underline-offset-8;
   }
 }

@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
@@ -9,6 +10,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello World</h1>
+    <Header />
+
+    <main class="mx-auto w-full max-w-7xl pt-32">
+      <h1 class="text-3xl font-bold underline">Hello World</h1>
+    </main>
   </body>
 </html>
