@@ -8,6 +8,7 @@
   /* Colors */
   --color-dark-base: #1d232a;
   --color-neon: #605dff;
+  --color-ice: #ecf9ff;
 }
 
 @layer base {
