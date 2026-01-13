@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
 @theme {
+  /* Fonts */
   --font-major-display: "Major Mono Display", monospace;
   --font-ibm-plex: "IBM Plex Mono", monospace;
+
+  /* Colors */
+  --color-dark-base: #1d232a;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-base text-white;
+    min-height: 100vh;
+  }
 }
