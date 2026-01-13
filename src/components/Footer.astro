@@ -1,0 +1,36 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<!-- <footer class="mt-5 w-full px-6 pb-8">
+  <div class="font-ibm-plex mx-auto max-w-6xl text-sm text-gray-500 italic">
+    Built with
+    <a
+      href="https://astro.build"
+      target="_blank"
+      class="text-neon decoration-neon hover:underline hover:underline-offset-2"
+    >
+      Astro
+    </a>
+  </div>
+</footer> -->
+<footer class="mt-20 w-full px-6 pb-8">
+  <div
+    class="font-ibm-plex mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 text-sm text-gray-500 italic md:flex-row md:items-start"
+  >
+    <div>
+      Built with
+      <a
+        href="https://astro.build"
+        target="_blank"
+        class="text-neon decoration-neon hover:underline hover:underline-offset-2"
+      >
+        Astro
+      </a>
+    </div>
+
+    <div>
+      Crafted by <span class="text-white">Abhijit</span> &copy; {currentYear}
+    </div>
+  </div>
+</footer>
