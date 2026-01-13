@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-major-display: "Major Mono Display", monospace;
+  --font-ibm-plex: "IBM Plex Mono", monospace;
+}
