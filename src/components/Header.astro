@@ -35,16 +35,17 @@
 
       <button
         id="menu-btn"
-        class="text-white focus:outline-none md:hidden"
+        class="relative z-50 text-white focus:outline-none md:hidden"
         aria-label="Toggle Menu"
       >
         <svg
+          id="menu-icon"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="h-8 w-8"
+          class="h-8 w-8 transition-transform duration-300"
         >
           <path
             stroke-linecap="round"
@@ -57,7 +58,7 @@
 
   <div
     id="mobile-menu"
-    class="absolute top-20 left-0 z-40 hidden h-screen w-full flex-col items-center gap-8 bg-[#1D232A]/95 p-8 backdrop-blur-md transition-all duration-300 md:hidden"
+    class="fixed top-0 left-0 z-40 hidden h-screen w-full flex-col items-center gap-8 bg-[#1D232A]/95 pt-24 backdrop-blur-md transition-all duration-300 md:hidden"
   >
     <a href="/" class="mobile-link">Home</a>
     <a href="/blog" class="mobile-link">Blog</a>
@@ -69,18 +70,41 @@
 <script>
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const iconPath = menuIcon?.querySelector("path");
+
+  // SVG Paths
+  const hamburgerPath = "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5";
+  const closePath = "M6 18L18 6M6 6l12 12";
+
+  function toggleMenu() {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    if (isHidden) {
+      // OPEN
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+      if (iconPath) iconPath.setAttribute("d", closePath);
+    } else {
+      // CLOSE
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+      if (iconPath) iconPath.setAttribute("d", hamburgerPath);
+    }
+  }
 
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenu.classList.toggle("flex");
-    });
+    menuBtn.addEventListener("click", toggleMenu);
 
     const links = mobileMenu.querySelectorAll("a");
     links.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
+        document.body.classList.remove("overflow-hidden");
+        if (iconPath) iconPath.setAttribute("d", hamburgerPath);
       });
     });
   }
