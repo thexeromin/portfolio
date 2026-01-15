@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage, tags } =
+  Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="w-full px-6">
+      <article class="mx-auto w-full max-w-2xl pt-12">
+        <div class="mb-2 pb-4">
+          <h1
+            class="font-ibm-plex mb-6 text-3xl leading-tight font-bold text-white md:text-4xl"
+          >
+            {title}
+          </h1>
+
+          <ul
+            class="font-ibm-plex flex flex-wrap items-center gap-6 text-sm text-gray-400"
+          >
+            <li class="flex items-center gap-2">
+              <FormattedDate date={pubDate} />
+            </li>
+
+            {
+              tags.map((tag) => (
+                <li class="text-neon decoration-neon underline-offset-4 transition-all hover:underline">
+                  <a href={`#${tag}`}>#{tag}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div
+          class="/* 1. Layout Resets */ prose prose-invert prose-lg /* 2. Global Font & Colors */ font-ibm-plex text-ice/80 /* 3. Headings */ prose-headings:font-bold prose-headings:text-white prose-headings:my-6 /* 4. Links & Strong */ prose-strong:text-white prose-strong:font-bold prose-a:text-neon prose-a:no-underline hover:prose-a:underline /* 5. Blockquotes */ prose-blockquote:border-0 prose-blockquote:pl-0 prose-blockquote:text-ice/60 prose-blockquote:italic /* 6. INLINE CODE (The 'Chip' Style) */ /* This applies to ALL code initially */ prose-code:text-white prose-code:bg-surface prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-medium prose-code:before:content-none prose-code:after:content-none /* 7. PRE TAG (The Code Block Container) */ prose-pre:bg-surface prose-pre:rounded-2xl prose-pre:border-0 prose-pre:p-5 prose-pre:overflow-x-auto /* 8. CODE INSIDE PRE (The Reset) */ /* CRITICAL: We force the code INSIDE the to be transparent and unpadded */ /* This stops the 'chip' style from ruining the code layout */ [&_pre_code]:!text-ice/90 /* Images */ prose-img:rounded-xl prose-img:m-0 /* Lists */ prose-li:marker:text-neon !m-0 block max-w-none !p-0 [&_pre_code]:!bg-transparent [&_pre_code]:!p-0 [&_pre_code]:!text-sm [&_pre_code]:!font-normal [&>:first-child]:!mt-0 [&>:last-child]:!mb-0"
+        >
+          <slot />
+        </div>
+      </article>
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
   /* Fonts */
   --font-major-display: "Major Mono Display", monospace;
@@ -9,6 +11,7 @@
   --color-dark-base: #1d232a;
   --color-neon: #605dff;
   --color-ice: #ecf9ff;
+  --color-surface: #191e24;
 }
 
 @layer base {

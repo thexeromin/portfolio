@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "./FormattedDate.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Page.astro";
 
 const posts = (await getCollection("blog")).sort((a, b) => {
   const dateA = new Date(a.data.pubDate).getTime();
@@ -10,14 +11,10 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 });
 ---
 
-<section class="font-ibm-plex pt-16 pb-8">
-  <h2 class="text-ice mb-8 inline-block pb-4 text-3xl font-bold md:text-4xl">
-    Latest posts
-  </h2>
-
+<Layout title={"All posts"} description={"all blog posts"}>
   <div class="font-ibm-plex flex flex-col gap-8">
     {
-      posts.slice(0, 3).map((post, index) => (
+      posts.map((post, index) => (
         <a href={`/blog/${post.id}/`} class="group block cursor-pointer">
           <div class="flex items-start gap-5">
             <span class="shrink-0 pt-1 text-sm text-white opacity-70 transition-opacity group-hover:opacity-100 md:text-base">
@@ -38,19 +35,4 @@ const posts = (await getCollection("blog")).sort((a, b) => {
       ))
     }
   </div>
-
-  {
-    posts.length > 3 && (
-      <div class="mt-12 text-sm text-gray-400 md:text-base">
-        {posts.length - 3} more post can be found in
-        <a
-          href="/blog"
-          class="text-neon decoration-neon italic transition-all hover:underline hover:underline-offset-4"
-        >
-          the blog
-        </a>
-        .
-      </div>
-    )
-  }
-</section>
+</Layout>
