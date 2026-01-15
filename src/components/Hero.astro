@@ -3,27 +3,27 @@ import AvatarImage from "../assets/avatar.jpg";
 ---
 
 <section
-  class="mx-auto grid min-h-[50vh] w-full max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-5"
+  class="mx-auto flex w-full max-w-2xl flex-col items-center gap-8 py-12 md:flex-row md:justify-between"
 >
   <div
-    class="order-2 flex flex-col items-center text-center md:order-1 md:col-span-3 md:items-start md:text-left"
+    class="order-2 flex flex-col items-center text-center md:order-1 md:flex-1 md:items-start md:text-left"
   >
     <h1
-      class="font-major-display mb-6 text-4xl leading-tight font-bold text-white md:text-6xl"
+      class="font-major-display mb-4 text-4xl leading-tight font-bold text-white md:text-5xl"
     >
       Hi, I am <br />
       <span class="text-neon">Abhijit</span>
     </h1>
 
     <p
-      class="text-ice font-ibm-plex mb-10 max-w-2xl text-lg leading-relaxed md:text-xl"
+      class="font-ibm-plex text-ice mb-8 max-w-md text-base leading-relaxed md:text-lg"
     >
       A Full-stack developer with a strong focus on building reliable, scalable
       software. Interested in performance, system internals, and writing clean,
       efficient code.
     </p>
 
-    <div class="text-ice flex items-center gap-6">
+    <div class="text-ice flex items-center gap-5">
       <a
         href="https://github.com/thexeromin"
         target="_blank"
@@ -31,7 +31,7 @@ import AvatarImage from "../assets/avatar.jpg";
       >
         <span class="sr-only">GitHub</span>
         <svg
-          class="h-7 w-7"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -50,7 +50,7 @@ import AvatarImage from "../assets/avatar.jpg";
       >
         <span class="sr-only">LinkedIn</span>
         <svg
-          class="h-7 w-7"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -69,7 +69,7 @@ import AvatarImage from "../assets/avatar.jpg";
       >
         <span class="sr-only">X</span>
         <svg
-          class="h-6 w-6"
+          class="h-5 w-5"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -82,11 +82,9 @@ import AvatarImage from "../assets/avatar.jpg";
     </div>
   </div>
 
-  <div
-    class="order-1 flex justify-center md:order-2 md:col-span-2 md:justify-end"
-  >
+  <div class="order-1 flex shrink-0 justify-center md:order-2">
     <div
-      class="border-neon relative h-64 w-64 rounded-full border-2 p-1 md:h-80 md:w-80"
+      class="border-neon relative h-48 w-48 rounded-full border-2 p-1 md:h-64 md:w-64"
     >
       <img
         src={AvatarImage.src}
