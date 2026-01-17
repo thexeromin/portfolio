@@ -11,13 +11,13 @@ const posts = (await getCollection("blog")).sort((a, b) => {
 });
 ---
 
-<Layout title={"All posts"} description={"all blog posts"}>
-  <div class="font-ibm-plex flex flex-col gap-8">
+<Layout title={"All Posts"} description={"all blog posts"}>
+  <div class="font-inter flex flex-col gap-8">
     {
       posts.map((post, index) => (
         <a href={`/blog/${post.id}/`} class="group block cursor-pointer">
-          <div class="flex items-start gap-5">
-            <span class="shrink-0 pt-1 text-sm text-white opacity-70 transition-opacity group-hover:opacity-100 md:text-base">
+          <div class="flex items-start gap-2">
+            <span class="shrink-0 pt-1 text-sm text-white opacity-70 transition-opacity group-hover:opacity-100">
               {String(posts.length - index + 1).padStart(2, "0")}.
             </span>
 
@@ -26,7 +26,7 @@ const posts = (await getCollection("blog")).sort((a, b) => {
                 {post.data.title}
               </h3>
 
-              <span class="text-sm text-gray-400">
+              <span class="text-xs text-gray-400">
                 <FormattedDate date={post.data.pubDate} />
               </span>
             </div>

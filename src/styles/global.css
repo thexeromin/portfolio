@@ -5,7 +5,8 @@
 @theme {
   /* Fonts */
   --font-major-display: "Major Mono Display", monospace;
-  --font-ibm-plex: "IBM Plex Mono", monospace;
+  --font-dm-mono: "DM Mono", monospace;
+  --font-inter: "Inter Variable", sans-serif;
 
   /* Colors */
   --color-dark-base: #1d232a;
@@ -22,7 +23,7 @@
 
   /* Desktop Links */
   .nav-link {
-    @apply font-major-display text-sm tracking-widest text-white transition-all duration-300;
+    @apply font-dm-mono text-sm tracking-widest text-white transition-all duration-300;
     /* Hover Styles */
     @apply hover:underline hover:decoration-white hover:decoration-1 hover:underline-offset-4;
   }

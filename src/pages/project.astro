@@ -1,17 +1,8 @@
 ---
 import Layout from "../layouts/Page.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Projects" description="Projects page">
-  <span
-    class="border-neon/20 bg-neon/10 text-neon font-ibm-plex inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium"
-  >
-    <span class="relative flex h-2 w-2">
-      <span
-        class="bg-neon absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-      ></span>
-      <span class="bg-neon relative inline-flex h-2 w-2 rounded-full"></span>
-    </span>
-    COMING SOON
-  </span>
+<Layout title="Projects" description="Projects page" hideTitle={true}>
+  <Projects />
 </Layout>
