@@ -14,7 +14,7 @@ I mostly work with React and React Native now, but the way I think about softwar
 
 I also enjoy studying DSA and solving algorithmic problems. It keeps me close to the fundamentals instead of just the frameworks.
 
-I care a lot about code quality, and I lean towards the <a href="https://suckless.org/philosophy/" target="_blank" rel="noopener noreferrer">suckless</a> and <a href="https://handmade.network/values" target="_blank" rel="noopener noreferrer">handmade network</a> way of thinking about software: simple, small, and built with intention instead of stacked with abstractions. I like Linux and want to use it daily, but my laptop's wi-fi card doesn't support it well, so I'm on Windows for now.
+I care a lot about code quality, and I lean towards the <a href="https://suckless.org/philosophy/" target="_blank" rel="noopener noreferrer">suckless</a> and <a href="https://handmade.network/values" target="_blank" rel="noopener noreferrer">handmade network</a> way of thinking about software: simple, small, and built with intention instead of stacked with abstractions.
 
 I like the idea of minimalism. It isn't just an aesthetic choice for me, it genuinely reduces how much unnecessary thinking I have to do in a day.
 
@@ -22,9 +22,9 @@ A few other things about me:
 
 I sing and write songs, though I'll be the first to admit they're not very good. I do enjoy taking songs I already love and writing my own lyrics over them.
 
-I love cinema. Some of my favorite films are 
-<a href="https://www.imdb.com/title/tt26758372/" target="_blank" rel="noopener noreferrer">Meiyazhagan</a>, 
-<a href="https://www.imdb.com/title/tt0986264/" target="_blank" rel="noopener noreferrer">Taare Zameen Par</a>, and 
+I love cinema. Some of my favorite films are
+<a href="https://www.imdb.com/title/tt26758372/" target="_blank" rel="noopener noreferrer">Meiyazhagan</a>,
+<a href="https://www.imdb.com/title/tt0986264/" target="_blank" rel="noopener noreferrer">Taare Zameen Par</a>, and
 <a href="https://www.imdb.com/title/tt2350496/" target="_blank" rel="noopener noreferrer">The Lunchbox</a>.
 
 I try to meditate every day with mindfulness. It has genuinely reduced my stress. I used the <a href="https://meditofoundation.org/medito-app/" target="_blank" rel="noopener noreferrer">Medito</a> app earlier, but after a month I started trying it without any guidance.
