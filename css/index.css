@@ -321,6 +321,19 @@ header {
 	margin-right: 1em;
 }
 
+.badges {
+	display: flex;
+	justify-content: center;
+	gap: 0.2em;
+}
+.badges a img {
+	width: 100px;
+	height: 40px;
+}
+.badges a img:nth-child(1) {
+	width: 100px;
+	height: 35px;
+}
 @media (max-width: 600px) {
 	footer {
 		flex-direction: column;
