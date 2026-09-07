@@ -157,6 +157,7 @@ footer {
 
 footer p {
 	color: #8A8A85;
+	font-size: 1em; /* 16px /16 */
 }
 
 #skip-link {
