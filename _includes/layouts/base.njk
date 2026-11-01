@@ -42,11 +42,14 @@
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<h1 class="brand">{{ metadata.title }}</h1>
+		<header class="site-header">
+			<a href="/" class="brand">
+				<span class="brand-badge" aria-hidden="true">🌱</span>
+				<span class="brand-title">{{ metadata.title }}</span>
+			</a>
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
+			<nav aria-label="Main menu">
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
@@ -62,12 +65,12 @@
 			</heading-anchors>
 		</main>
 
-		<footer>
-			<p>
+		<footer class="site-footer">
+			<p class="footer-copyright">
 				© 2026 Abhijit Paul. All rights reserved.
 			</p>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
+			<p class="footer-generator">
+				<em>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">{{ eleventy.generator }}</a></em>
 			</p>
 		</footer>
 
