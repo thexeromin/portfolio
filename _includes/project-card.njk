@@ -1,0 +1,98 @@
+{% macro projectCard(project) %}
+<article class="project-card{% if project.featured %} project-card--featured{% endif %}">
+	{% if project.featured %}
+	<div class="project-featured-grid">
+		<div class="project-media-wrap">
+			<a href="{{ project.links.live or project.links.github or '#' }}" target="_blank" rel="noopener noreferrer" class="dummy-media-link" aria-label="Watch {{ project.title }} preview demo">
+				<div class="dummy-media-card">
+					<div class="dummy-media-screen">
+						<div class="dummy-app-header">
+							<div class="dummy-notch"></div>
+						</div>
+
+						<div class="dummy-radar-circle dummy-radar-outer"></div>
+						<div class="dummy-radar-circle dummy-radar-inner"></div>
+
+						<div class="dummy-map-pin pin-1"></div>
+						<div class="dummy-map-pin pin-2"></div>
+						<div class="dummy-map-pin pin-3"></div>
+						<div class="dummy-map-pin pin-4"></div>
+
+						<div class="dummy-play-btn" aria-hidden="true">
+							<svg class="play-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+								<path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/>
+							</svg>
+						</div>
+
+						<div class="dummy-app-footer">
+							<div class="dummy-footer-bar"></div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="project-content">
+			<h2 class="project-title">{{ project.title }}</h2>
+			<p class="project-desc">{{ project.desc }}</p>
+
+			{% if project.tags and project.tags.length %}
+			<div class="project-tags">
+				{% for tag in project.tags %}
+				<span class="project-tag">{{ tag }}</span>
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			<div class="project-links">
+				{% if project.links.github %}
+				<a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer">Github</a>
+				{% endif %}
+				{% if project.links.github and project.links.live %}
+				<span class="link-dot">·</span>
+				{% endif %}
+				{% if project.links.live %}
+				<a href="{{ project.links.live }}" target="_blank" rel="noopener noreferrer">Live</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% else %}
+	<h2 class="project-title">{{ project.title }}</h2>
+	<p class="project-desc">{{ project.desc }}</p>
+
+	{% if project.highlight %}
+	<div class="project-highlight">
+		<span class="highlight-title">{{ project.highlight.title or "Highlight:" }}</span>
+		<p class="highlight-text">{{ project.highlight.text }}</p>
+	</div>
+	{% endif %}
+
+	{% if project.tags and project.tags.length %}
+	<div class="project-tags">
+		{% for tag in project.tags %}
+		<span class="project-tag">{{ tag }}</span>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<div class="project-links">
+		{% if project.links.github %}
+		<a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer">Github</a>
+		{% endif %}
+		{% if project.links.github and project.links.live %}
+		<span class="link-dot">·</span>
+		{% endif %}
+		{% if project.links.live %}
+		<a href="{{ project.links.live }}" target="_blank" rel="noopener noreferrer">Live</a>
+		{% endif %}
+	</div>
+	{% endif %}
+</article>
+{% endmacro %}
+
+{# Supports direct include: {% set project = ... %}{% include "project-card.njk" %} #}
+{% if project %}
+	{{ projectCard(project) }}
+{% endif %}
+

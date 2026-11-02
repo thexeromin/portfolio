@@ -1,0 +1,62 @@
+---js
+const eleventyNavigation = {
+	key: "Projects",
+	order: 3
+};
+
+const featuredProject = {
+	title: "BloodZone",
+	desc: "Real-time blood donor matching app with geospatial search, push notifications, JWT auth, and Socket.io chat. Built with React Native, Express, and MongoDB.",
+	featured: true,
+	tags: ["React Native", "Express", "MongoDB", "Socket.io", "GeoJSON / Turf.js"],
+	links: {
+		github: "https://github.com/thexeromin/bloodzone",
+		live: "https://www.youtube.com/watch?v=Iv-OQy9J9Gw"
+	}
+};
+
+const projects = [
+	{
+		title: "Kantoo",
+		desc: "A Kanban board built with React and TypeScript. Supports drag and drop for tasks and columns, persists state across sessions, and optimizes renders using React.memo and useCallback for noticeably smoother interactions.",
+		highlight: {
+			title: "Highlight:",
+			text: "Zero external state libraries; fine-grained memoization to prevent kanban drag jitter."
+		},
+		tags: ["React", "TypeScript", "dnd-kit", "LocalStorage"],
+		links: {
+			github: "https://github.com/thexeromin/kantoo",
+			live: "https://kantoo.xeromin.in/"
+		}
+	},
+	{
+		title: "Kuan",
+		desc: "A lightweight HTTP/1.1 server built from scratch in C using POSIX sockets and a custom thread-pool architecture. No frameworks, no libraries. Just raw sockets.",
+		highlight: {
+			title: "Highlight:",
+			text: "Custom worker queue with pthread condition variables for concurrent keep-alive socket handling."
+		},
+		tags: ["C", "POSIX Sockets", "pthreads", "HTTP/1.1"],
+		links: {
+			github: "https://github.com/thexeromin/kuan"
+		}
+	}
+];
+---
+
+{% from "project-card.njk" import projectCard %}
+
+<header class="projects-header">
+	<h1 class="projects-title">Projects</h1>
+	<p class="projects-subtitle">A digital workshop of low-level systems, real-time collaboration tools, and mobile applications crafted with performance in mind.</p>
+</header>
+
+<div class="projects-container">
+	{{ projectCard(featuredProject) }}
+
+	<div class="projects-subgrid">
+		{% for project in projects %}
+			{{ projectCard(project) }}
+		{% endfor %}
+	</div>
+</div>
