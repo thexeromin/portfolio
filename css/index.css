@@ -396,3 +396,48 @@ header {
 	text-decoration-thickness: 1px;
 	transition: color 0.15s ease, opacity 0.15s ease;
 }
+
+/* System Specs */
+.system-specs {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-top: 3rem;
+}
+
+.system-specs-text {
+	flex: 1;
+}
+
+.system-specs-text h2 {
+	font-family: var(--font-family-heading);
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem 0;
+}
+
+.system-specs-text p {
+	font-size: 0.95rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.system-specs-image {
+	width: 100%;
+	max-width: 450px;
+	height: auto;
+	border-radius: 6px;
+	flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+	.system-specs {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.25rem;
+	}
+
+	.system-specs-image {
+		max-width: 100%;
+	}
+}
