@@ -137,6 +137,10 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+hr{
+	border-style: dashed;
+}
+
 main{
 	padding: 2em 0;
 	min-height: 70vh;
