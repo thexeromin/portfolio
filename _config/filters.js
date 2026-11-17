@@ -40,4 +40,8 @@ export default function(eleventyConfig) {
 	eleventyConfig.addFilter("sortAlphabetically", strings =>
 		(strings || []).sort((b, a) => b.localeCompare(a))
 	);
+
+	eleventyConfig.addFilter("padZero", (num, width = 2) => {
+		return String(num).padStart(width, "0");
+	});
 };

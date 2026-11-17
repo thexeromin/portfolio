@@ -1,0 +1,23 @@
+[
+  {
+    "title": "BloodZone",
+    "description": "Real-time blood donor matching app with geospatial search, push notifications, JWT auth, and Socket.io chat. Built with React Native, Express, and MongoDB.",
+    "image": "../img/bloodzone.webp",
+    "github": "https://github.com/thexeromin/bloodzone",
+    "live": "https://www.youtube.com/watch?v=Iv-OQy9J9Gw"
+  },
+  {
+    "title": "Kantoo",
+    "description": "A Kanban board built with React and TypeScript. Supports drag and drop for tasks and columns, persists state across sessions, and optimizes renders using React.memo and useCallback for noticeably smoother interactions.",
+    "image": "../img/kantoo.webp",
+    "github": "https://github.com/thexeromin/kantoo",
+    "live": "https://kantoo.xeromin.in/"
+  },
+  {
+    "title": "Kuan",
+    "description": "A lightweight HTTP/1.1 server built from scratch in C using POSIX sockets and a custom thread-pool architecture. No frameworks, no libraries. Just raw sockets.",
+    "image": "https://placehold.co/600x400/1a1a1a/FFF?text=Kuan&font=montserrat",
+    "github": "https://github.com/thexeromin/kuan",
+    "live": null
+  }
+]
